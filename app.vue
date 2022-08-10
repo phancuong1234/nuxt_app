@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import './assets/css/tailwind.css'
+import "@/assets/css/custom.css";
 </script>
 <template>
   <div>

@@ -1,30 +1,30 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from "nuxt";
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    css: ["@/assets/css/tailwind.css"],
-    build: {
-        postcss: {
-            postcssOptions: {
-                plugins: {
-                    tailwindcss: {},
-                    autoprefixer: {},
-                },
-            },
-        },
-    },
-    typescript: {
-        strict: true,
-        shim: false
-    },
-    // build modules
-    modules: ['@vueuse/nuxt', '@pinia/nuxt'],
+  css: ["ant-design-vue/dist/antd.css"],
+  build: {},
+  typescript: {
+    strict: true,
+    shim: false
+  },
+  // build modules
+  modules: ["@vueuse/nuxt", "@pinia/nuxt", "@unocss/nuxt"],
+  unocss: {
+    // presets
+    uno: true, // enabled `@unocss/preset-uno`
+    icons: true, // enabled `@unocss/preset-icons`
+    attributify: true, // enabled `@unocss/preset-attributify`,
 
-    // auto import components
-    components: true,
+    // core options
+    shortcuts: [],
+    rules: []
+  },
+  // auto import components
+  components: false,
 
-    // vueuse
-    vueuse: {
-        ssrHandlers: true,
-    },
-    ssr: false,
-})
+  // vueuse
+  vueuse: {
+    ssrHandlers: true
+  },
+  ssr: false
+});
